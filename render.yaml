@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: vanta-kfitz-render-2026
+    runtime: docker
+    plan: 0.5c-512mb
+    region: virginia
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    disk:
+      name: vanta-data
+      mountPath: /app/data
+      sizeGB: 1
